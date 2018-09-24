@@ -22,11 +22,17 @@ function checkNameEntered(name){
   if (typeof name === 'undefined'){ 
     throw new Error('Name is not defined'); 
   }
+  if (typeof name !== 'string'){
+      throw new TypeError('Name is a not a string');
+  }
 }
 
 function checkAgeEntered(age){ 
   if (typeof age === 'undefined'){ 
     throw new Error('Age is not defined'); 
+  }
+  if (typeof age !== 'number'){
+      throw new TypeError('Age is not a number');
   }
 }
 
@@ -39,7 +45,7 @@ function getYearOfBirth(age){
 }
 
 let name = 'john'; 
-let age = 20; 
+let age = 'twenty five'; 
 
 const greeting1 = createGreeting(name, age);
 console.log(greeting1);
